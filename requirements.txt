@@ -1,0 +1,9 @@
+pandas
+google-generativeai
+python-dotenv
+tqdm
+scikit-learn
+joblib
+numpy
+qdrant-client
+
