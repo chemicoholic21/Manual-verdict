@@ -7,3 +7,10 @@ joblib
 numpy
 qdrant-client
 
+# BERT + LoRA dependencies
+torch>=2.0.0
+transformers>=4.30.0
+peft>=0.4.0
+accelerate>=0.20.0
+datasets>=2.12.0
+
