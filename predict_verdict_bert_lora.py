@@ -161,8 +161,11 @@ def predict_csv(model_dir, in_csv, out_csv,
     if verdict_col not in df.columns:
         df[verdict_col] = None
     
-    # Convert predictions to string to avoid dtype warnings
-    df.loc[mask, verdict_col] = predicted_labels.astype(str)
+    # Ensure verdict column is object/string type to avoid dtype warnings
+    df[verdict_col] = df[verdict_col].astype('object')
+    
+    # Convert predictions to string and assign
+    df.loc[mask, verdict_col] = [str(label) for label in predicted_labels]
     
     # Save results
     print(f"💾 Saving predictions to: {out_csv}")
